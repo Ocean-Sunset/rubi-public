@@ -1,0 +1,49 @@
+# Solrais Update Changelog — v1.4.3
+
+## ✨ New Features
+
+- **Relay Node 3 (Cyberspace Server)** is now fully active and monitored by the watchdog
+- **New command: `/fix_missing_rank`** — for staff: restores macroer rank to users who lost it due to the previous AFK role bug (replaces the old `/fix_afk_role`)
+- **Auto-reply in the unverified support channel** — if you ask about verification, the bot will now automatically give you step-by-step instructions. If the commands don't work for you, it'll tell you to ping staff
+- **AI system improvements** — smarter responses, knows who the creators are (@dxrkfire & @n3ru__), less obsessed with Sol's RNG, and long messages are now properly split into multiple messages instead of being cut off
+- **Web dashboard** now live with relay node status, restart buttons, leaderboards, and maintenance mode toggle
+
+## 🛠️ Bug Fixes
+
+- **Fixed:** The FREE biome webhook was missing on Server 1 — relay bots now correctly send free biomes (Windy, Rainy, Snowy) through the free webhook instead of getting lost
+- **Fixed:** Server 3 was using Server 2's category IDs in the config — channels, roles, and AFK/dormant systems now work correctly on Cyberspace
+- **Fixed:** `solraisconfig` menu was broken due to a case-sensitive custom ID — settings can now be saved properly
+- **Fixed:** AI was answering from its own knowledge instead of using tools — it now properly looks things up before answering
+- **Fixed:** `/force_roblox_link` now works for staff without needing full Administrator permission
+- **Fixed:** Config UI modals extracting wrong server ID on Server 3
+- **Fixed:** Merchant detection (Mari, Jester, Rin) and Aura detection improvements
+
+## 📈 Improvements
+
+- User data storage limit increased from 25 to 50 files per folder
+- `/stats` command now shows the data file path
+- Relay bots simplified — removed separate weather relay, now using free webhook for all free biomes
+- Ping pings, duplicate embeds, and "No Macro Selected" embeds cleaned up
+- Macro time leaderboard accuracy improved
+- Watchdog alerts no longer stick around after the node recovers
+- Wrong ping role issue in watchdog alerts fixed
+
+## 🤖 AI Changes
+
+- **New image generation tool** — the AI can now generate images using Magnific API
+- **New vision/analysis tool** — the AI can analyze images sent to it
+- **Creator knowledge** added — the AI knows who built it
+- **2000-character splitting** — long AI responses are now split across multiple messages instead of being truncated
+- **Personality toned down** — less Sol's RNG obsession in its responses
+- **Safeguard pipeline** created — knowledge retrieval + hallucination detection + content filtering
+
+## 🔧 Staff Changes
+
+- `/fix_afk_role` has been **removed** and replaced with `/fix_missing_rank` (restores macroer rank instead of just removing AFK)
+- Staff role IDs updated for multi-server support
+- AI profiling toggle available in config
+- `/check_activity` improvements for better oversight
+
+---
+
+*Full release notes available in the support server. Report bugs to staff.*

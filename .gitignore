@@ -1,0 +1,5 @@
+# Only README and changelog go in this repo
+*.*
+!.gitignore
+!README.md
+!changelog.txt
