@@ -1,179 +1,189 @@
-# 🤖 Solrais - Sol's RNG Macro Tracker
+# 🤖 Solrais — Macro Tracker & AI Assistant
 
-> Solrais is a powerful Discord bot designed for tracking macro sessions in Sol's RNG, featuring AI-powered chat, multi-server support, and a web dashboard.
+> Solrais is a powerful multi-server Discord bot for **macro session tracking**, **AI-powered chat**, **biome relay systems**, and **community management** — built for Sol's RNG and similar Roblox macro communities.
 
-![Version](https://img.shields.io/badge/version-v1.4.3-blue)
-![Node](https://img.shields.io/badge/node-18%2B-green)
+![Version](https://img.shields.io/badge/version-v1.4.3-blue?style=flat-square)
+![Node](https://img.shields.io/badge/node-18%2B-green?style=flat-square)
+![Status](https://img.shields.io/badge/status-active-brightgreen?style=flat-square)
+![License](https://img.shields.io/badge/license-Private-red?style=flat-square)
 
 ---
 
 ## ⚠️ NOTICE
 
-> [!NOTE]
-> This repository is **PRIVATE**. Do not share, distribute, or publish any part of this code without explicit permission from the owner.
+> [!IMPORTANT]
+> This repository is **PRIVATE**. The code is not available for public download or distribution. Solrais runs exclusively on the owner's infrastructure. Do not share, distribute, or publish any part of this code without explicit permission.
+
+> [!CAUTION]
+> **This is not a self-hosted bot.** Solrais is operated on private servers and accessed through Discord. No download or self-hosting option is available.
+
+---
+
+## 🤖 AI Chat System
+
+Solrais features a **full AI chat system** powered by Groq API with access to real-time server data. Unlike basic chatbots, Solrais can actually **look up information** and **perform actions** using callable tools.
+
+### How It Works
+
+Mention Solrais or use the `s.` prefix to start chatting. The AI has:
+
+- **🧠 Memory & Profile Learning** — Solrais remembers how you talk, your personality traits, interests, and writing style. The more you chat, the more personalized responses become.
+- **🔧 12+ Callable Tools** — Instead of guessing, Solrais runs actual tools to fetch data:
+  - Query user stats, sessions, and leaderboard positions
+  - Search the knowledge base for Sol's RNG mechanics, auras, potions, and biomes
+  - Look up server members and their macro activity
+  - Find users by username with fuzzy/typo-tolerant matching
+  - Generate images using the Magnific API
+  - Analyze images sent in chat
+- **🎯 Smart Context** — Understands follow-up questions, comparisons ("who has more hours, X or Y?"), and multi-turn conversations.
+- **📸 Vision Support** — Send Solrais an image and it can analyze what's in it.
+- **🛡️ Content Filtering** — Built-in safeguard pipeline checks responses for consistency and safety before posting.
+
+### Example Things You Can Ask
+
+> *"How many total hours does dxrkfire have?"*
+> *"Compare my stats with n3ru's"*
+> *"What's the rarest aura in Sol's RNG?"*
+> *"Show me the leaderboard for this week"*
+> *"Generate an image of a glitch biome"*
+> *"What does this screenshot show?"*
 
 ---
 
 ## 🌟 Features
 
-### 🤖 AI Chat Integration
-- **Groq API** with 12+ callable tools for real-time data
-- **User Profile Learning** — Solrais remembers personality traits, writing style, and interests
-- **Smart Responses** — Knows Sol's RNG mechanics, aura rarities, potion mechanics, and more
-- **Person Lookup** — Can answer questions about specific server members
-- **Username Search** — Fuzzy matching for finding users with partial/typo names
+### 📊 Macro Session Tracking
+- **Auto-detection** of macro start/stop events from webhooks
+- **Live session stats** — duration, biome count, streak tracking
+- **Per-user history** surviving restarts and reboots
+- **Multi-software support** — MultiScope, Coteab Macro, SolsScope, Maxstellar's Biome Macro, J.Jram, fishSol, EggSol, and more
+- **Macro version detection** and optional blacklisting
 
-### 🖥️ Multi-Server Architecture
-- **Per-Server Configuration** — Each server has its own delay channels, webhooks, and settings
-- **Relay Nodes** — Distributed nodes handle webhook processing for reliability
-- **Real-Time Sync** — Config changes broadcast instantly to all nodes
+### 🌐 Biome Relay System
+- **Rare biome alerts** — Glitch, Dreamspace, Cyberspace relayed with @everyone pings
+- **Delay-based relays** — Hell, Heaven, Starfall, Corruption, Null, Sandstorm with configurable delays per role
+- **Weather system** — Windy, Rainy, Snowy forwarded automatically
+- **Free biome webhooks** — all free biomes routed through dedicated channels
+- **Merchant alerts** — Mari, Jester, Rin detected and relayed to designated channels
 
-### 📊 Dashboard
-- Web-based dashboard with real-time stats
-- Leaderboard visualization
-- Session history and daily activity charts
-- Discord OAuth2 authentication
+### 👥 User & Rank Management
+- **AFK system** — `/afk` removes macroer roles, `/unafk` restores them with channel cleanup
+- **Dormant system** — `/dormant` archives inactive users, `/undormant` reinstates roles and channels
+- **Roblox verification** — `/link_roblox` checks RoVer registry or does manual code-based verification
+- **Auto-role assignment** — verified/unverified roles, macroer rank, and dormant roles managed automatically
+- **Inactivity warnings** — automatic pings after 3+ days of no macro activity
+- **Auto-cleanup** — user data cleaned 48 hours after leaving the server
 
-### 🛡️ Macro Tracking
-- Auto-detection of macro start/stop events
-- Support for native Discord webhooks and relay servers
-- Daily quest and achievement tracking
-- Biome detection and statistics
-- Merchant tracking (mari, jester, rin)
-- Rare biome alerts (glitch, dreamspace, cyberspace)
+### 🏆 Leaderboards & Stats
+- **Live leaderboards** — total hours, current sessions, weekly rankings
+- **Achievement system** — unlockable achievements with daily quests
+- **Activity breakdown** — per-category and per-user macro activity over configurable time windows
+- **Session history** — detailed logs of every macro session with biome stats
 
----
+### 🛠️ Staff Tools
+- **`/fix_missing_rank`** — restore macroer rank to users who lost it due to bugs
+- **`/force_roblox_link`** — manually link a Discord user to a Roblox account
+- **`/force_assign` / `/force_unassign`** — manage channel assignments
+- **`/macro_block`** — block specific macro versions server-wide
+- **`/category`** — manage tracked Discord categories
+- **`/create_webhook`** — generate webhook URLs for macro channels
+- **`/node_restart`** — restart relay nodes remotely
+- **`/check_webhooks`** — scan and validate webhook configurations
+- **`/check_activity`** — deep-dive activity audit per category
+- **`/maintenance`** — toggle maintenance mode to block all user commands
 
-## 🚀 Setup
+### 🖥️ Web Dashboard
+- Real-time overview: active macroers, session count, total hours, biomes detected
+- Relay node status with online/offline indicators
+- One-click relay node restart from browser
+- Top 25 leaderboard view
+- Maintenance mode toggle
+- Discord OAuth2 authentication for secure access
 
-### Prerequisites
-- Node.js 18+
-- Discord Bot Token
-- Groq API Key (free tier available)
-
-### Installation
-
-```bash
-# Install dependencies
-npm install
-
-# Install relay bot dependencies
-cd relay-bot-1 && npm install && cd ..
-cd relay-bot-2 && npm install && cd ..
-cd handler && npm install && cd ..
-```
-
-### Configuration
-
-> [!NOTE]
-> Copy `.env.example` to `.env` and fill in your credentials.
-
-```bash
-cp .env.example .env
-```
-
-Edit `.env` with your credentials:
-
-```env
-TOKEN=your_discord_bot_token
-DISCORD_CLIENT_ID=your_client_id
-DISCORD_CLIENT_SECRET=your_client_secret
-GROQ_API_KEY=your_groq_api_key
-SESSION_SECRET=random_secure_string
-PORT=24593
-HOST=your-domain.com
-```
-
-### Running
-
-```bash
-# Start main bot
-npm start
-
-# Start relay nodes (in separate terminals)
-cd relay-bot-1 && node index.js
-cd relay-bot-2 && node index.js
-
-# Start watchdog handler
-cd handler && node index.js
-```
+### 🐕 Watchdog System
+- **Dedicated handler** monitors the main bot and all relay nodes 24/7
+- Automatic alerts when any node goes offline
+- Auto-clearing alerts when the node recovers
+- Configurable ping role for watchdog notifications
 
 ---
 
-## 📁 Project Structure
+## 🔧 Architecture
+
+Solrais runs as a **distributed multi-node system**:
 
 ```
-├── src/
-│   ├── bot/server/
-│   │   ├── commands.js          # Slash command handlers
-│   │   └── configUIHandler.js   # Config UI interactions
-│   ├── services/server/
-│   │   ├── groqService.js       # AI chat with Groq
-│   │   ├── groqTools.js         # AI tool definitions (12+ tools)
-│   │   ├── macroService.js      # Macro tracking logic
-│   │   ├── nodeService.js       # Node registration
-│   │   └── webhookService.js    # Webhook relay
-│   └── utils/server/
-│       ├── constants.js          # Categories, biomes, merchants
-│       ├── macroHandler.js       # Data layer
-│       └── configHandler.js      # Config management
-├── relay-bot-1/                  # Relay node 1 (server1)
-├── relay-bot-2/                  # Relay node 2 (server2)
-├── handler/                      # Watchdog handler
-├── server.js                     # Express web server + dashboard
-├── data/                         # Runtime data (not committed)
-└── .env                          # Secrets (not committed)
+Discord ──► Relay Bot 1 ──► Main Bot ──► Dashboard
+          ──► Relay Bot 2 ──► Main Bot ──► AI (Groq API)
+          ──► Relay Bot 3 ──► Main Bot ──► Webhooks
+          ──► Watchdog Handler (monitors everything)
 ```
+
+- **Relay bots** (3 nodes) receive webhooks from macro clients and forward them
+- **Main bot** processes sessions, relays, commands, and AI
+- **Watchdog handler** keeps everything alive and alerts staff on failure
+- **Web dashboard** provides live status and remote control
 
 ---
 
-## 🎮 Commands
+## 🎮 Commands Overview
 
+### User Commands
 | Command | Description |
 |---------|-------------|
-| `/category` | Manage delay channels and categories |
-| `/solraisconfig` | Configure weather, delays, and webhooks |
-| `/stats` | View macro statistics |
-| `/leaderboard` | View the macro leaderboard |
-| `/daily` | View daily quest status |
-| `?ping` | Test bot and node latency |
-| `?help` | Show help menu |
-| `!assign_channel` | Link Discord channel to macro channel |
+| `/stats` | View your macro statistics and data path |
+| `/myprogress` | 7-day activity graph |
+| `/leaderboards` | View macro leaderboard |
+| `/daily` | Daily quest status |
+| `/achievements` | View your unlocked achievements |
+| `/link_roblox` | Link your Roblox account for verification |
+| `/bugfix` | Report a bug |
+| `/suggestion` | Submit a suggestion |
 
 ### AI Chat
-Mention Solrais or use `!` prefix to chat. Solrais can:
-- Answer questions about Sol's RNG
-- Look up user stats and leaderboard positions
-- Compare users
-- Show biome breakdowns and session history
+| Trigger | Behaviour |
+|---------|-----------|
+| `@Solrais` | Ping the bot to start an AI conversation |
+| `s.<message>` | Prefix any message with `s.` to chat |
+| Image in chat | Solrais can analyze images you send |
+
+### Staff Commands
+| Command | Description |
+|---------|-------------|
+| `/fix_missing_rank` | Restore macroer rank to affected users |
+| `/force_roblox_link` | Force-link a Discord user to a Roblox account |
+| `/category` | Manage tracked categories |
+| `/solraisconfig` | Configure delays, weather, and webhooks |
+| `/macro_block` | Block macro versions |
+| `/node_restart` | Restart relay nodes |
+| `/maintenance` | Toggle maintenance mode |
+| `/check_activity` | Activity audit |
 
 ---
 
-## 🔧 Configuration
+## 🏗️ Project Structure
 
-### Multi-Server Setup
-
-Each server in `data/config.json` has its own configuration:
-
-```json
-{
-  "servers": {
-    "server1": {
-      "delay_channels": ["hell", "heaven", "dreamspace"],
-      "delay": [{ "webhook": "...", "delay": 5 }],
-      "weather": [{ "rainy": "..." }],
-      "delay_channel_roles": { "dreamspace": "<@&role_id>" }
-    },
-    "server2": { ... }
-  }
-}
+```
+src/
+├── bot/server/          — Slash commands, config UI, interactions
+├── services/server/     — Core logic: AI, macros, relays, webhooks
+└── utils/server/        — Data layer, constants, config handler
+relay-bot-{1..3}/        — Relay nodes for webhook processing
+handler/                 — Watchdog system
+server.js                — Express web dashboard
+data/                    — Runtime data (users, config, sessions)
 ```
 
 ---
 
 ## 📜 License
 
-**PRIVATE** — This code is the exclusive property of its owner. All rights reserved.
+**PRIVATE** — All rights reserved. This code is the exclusive property of its owner.
 
 > [!CAUTION]
 > **Do not share, redistribute, or use this code without permission.**
+> Solrais is a private service — no public downloads, self-hosting, or distribution.
+
+---
+
+*Built and maintained by **dxrkfire** & **n3ru__** for the Solrais community.*
