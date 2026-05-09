@@ -1,49 +1,49 @@
-# Solrais Update Changelog — v1.4.3
+# 🚀 Release v1.4.3 — Relay Expansion & AI Refinements
 
-## ✨ New Features
+> This update adds Relay Node 3, the `/fix_missing_rank` command, verification auto-reply in the support channel, significant AI improvements, and various bug fixes across the board.
 
-- **Relay Node 3 (Cyberspace Server)** is now fully active and monitored by the watchdog
-- **New command: `/fix_missing_rank`** — for staff: restores macroer rank to users who lost it due to the previous AFK role bug (replaces the old `/fix_afk_role`)
-- **Auto-reply in the unverified support channel** — if you ask about verification, the bot will now automatically give you step-by-step instructions. If the commands don't work for you, it'll tell you to ping staff
-- **AI system improvements** — smarter responses, knows who the creators are (@dxrkfire & @n3ru__), less obsessed with Sol's RNG, and long messages are now properly split into multiple messages instead of being cut off
-- **Web dashboard** now live with relay node status, restart buttons, leaderboards, and maintenance mode toggle
+### 🤖 AI Chat Improvements
 
-## 🛠️ Bug Fixes
+- **Tool Enforcement Overhaul**: Fixed a critical bug where the AI was answering from its own training knowledge instead of calling tools — it now properly looks up data before every response
+- **Image Generation**: Added a new callable tool that lets the AI generate images via the Magnific API
+- **Vision Support**: The AI can now analyze images sent in chat using Groq's vision capabilities
+- **Creator Knowledge**: Solrais now knows who built it — ask about @dxrkfire or @n3ru__ and it can tell you
+- **2000-Character Splitting**: Long AI responses are no longer truncated — they're split across multiple messages automatically
+- **Personality Toning**: Reduced the excessive Sol's RNG obsession in default responses; personality is now more balanced
+- **Safeguard Pipeline**: New backend pipeline with TF-IDF knowledge retrieval, HHEM hallucination detection, and Groq-based content filtering
 
-- **Fixed:** The FREE biome webhook was missing on Server 1 — relay bots now correctly send free biomes (Windy, Rainy, Snowy) through the free webhook instead of getting lost
-- **Fixed:** Server 3 was using Server 2's category IDs in the config — channels, roles, and AFK/dormant systems now work correctly on Cyberspace
-- **Fixed:** `solraisconfig` menu was broken due to a case-sensitive custom ID — settings can now be saved properly
-- **Fixed:** AI was answering from its own knowledge instead of using tools — it now properly looks things up before answering
-- **Fixed:** `/force_roblox_link` now works for staff without needing full Administrator permission
-- **Fixed:** Config UI modals extracting wrong server ID on Server 3
-- **Fixed:** Merchant detection (Mari, Jester, Rin) and Aura detection improvements
+> Solrais AI is continuously improving. Report quirks or weird responses to staff.
 
-## 📈 Improvements
+### 🆕 New Commands & Systems
 
-- User data storage limit increased from 25 to 50 files per folder
-- `/stats` command now shows the data file path
-- Relay bots simplified — removed separate weather relay, now using free webhook for all free biomes
-- Ping pings, duplicate embeds, and "No Macro Selected" embeds cleaned up
-- Macro time leaderboard accuracy improved
-- Watchdog alerts no longer stick around after the node recovers
-- Wrong ping role issue in watchdog alerts fixed
+- **`/fix_missing_rank`**: Replaces the old `/fix_afk_role`. Instead of just removing AFK roles, this scans all members and restores the macroer rank to anyone who lost it due to previous bugs. Shows per-server stats on fixed vs. already-had-rank counts.
+- **Verification Auto-Reply**: The unverified support channel now has a smart auto-responder. If you ask about verification, it posts step-by-step instructions. If you say the commands aren't working, it defers to staff automatically.
+- **Relay Node 3**: Cyberspace server now has its own dedicated relay node, fully integrated with the watchdog handler
 
-## 🤖 AI Changes
+> `/fix_afk_role` has been **removed**. Use `/fix_missing_rank` instead.
 
-- **New image generation tool** — the AI can now generate images using Magnific API
-- **New vision/analysis tool** — the AI can analyze images sent to it
-- **Creator knowledge** added — the AI knows who built it
-- **2000-character splitting** — long AI responses are now split across multiple messages instead of being truncated
-- **Personality toned down** — less Sol's RNG obsession in its responses
-- **Safeguard pipeline** created — knowledge retrieval + hallucination detection + content filtering
+### 🖥️ Multi-Server & Configuration
 
-## 🔧 Staff Changes
+- **Server 3 Config Fix**: Server 3 was incorrectly using Server 2's category IDs — channels, roles, AFK, and dormant systems now work correctly on Cyberspace
+- **solraisconfig Menu Fix**: Resolved a case-sensitive custom ID bug that prevented the config menu from loading properly
+- **Config UI Modal Fix**: Server 3's modal was extracting the wrong server ID — settings now save to the correct server
+- **Staff Role IDs**: Updated for proper multi-server support across all three servers
 
-- `/fix_afk_role` has been **removed** and replaced with `/fix_missing_rank` (restores macroer rank instead of just removing AFK)
-- Staff role IDs updated for multi-server support
-- AI profiling toggle available in config
-- `/check_activity` improvements for better oversight
+### 🌐 Relay & Biome Systems
 
----
+- **Free Biome Webhook Added**: Server 1 was missing the `free` webhook entirely — relay bots now correctly route Windy, Rainy, and Snowy through the dedicated free webhook
+- **Weather Relay Simplified**: Removed the separate weather relay system; all free biomes now use the unified free webhook channel
+- **Merchant & Aura Detection**: Improved Mari, Jester, and Rin detection with better pattern matching
 
-*Full release notes available in the support server. Report bugs to staff.*
+### 🛡️ Bug Fixes & Improvements
+
+- **`/force_roblox_link` Permission Fix**: No longer requires full Administrator permission — checks for staff role IDs at runtime instead
+- **Duplicate Embeds Cleaned**: No more duplicate webhook processing or "No Macro Selected" ghost embeds
+- **Ping Pings Eliminated**: Fixed an issue causing unintended ping mentions in relay messages
+- **Macro Time Leaderboard Accuracy**: Session duration calculations improved for more accurate rankings
+- **Watchdog Alert Cleanup**: Alerts now auto-clear when a recovering node comes back online instead of persisting
+- **Wrong Ping Role Fix**: Watchdog alerts no longer ping the incorrect role
+- **User Storage Increased**: Folder file limit raised from 25 to 50 for better scalability
+- **`/stats` Path Display**: The stats command now shows the user's data file path for debugging
+
+> SOLRAIS IS ENTIRELY PRIVATE, VIEWING / TAMPERING / MODIFYING / TAKING THE CODE WITHOUT PERMISSION IS STRICTLY FORBIDDEN

@@ -1,6 +1,6 @@
 # 🤖 Solrais — Macro Tracker & AI Assistant
 
-> Solrais is a powerful multi-server Discord bot for **macro session tracking**, **AI-powered chat**, **biome relay systems**, and **community management** — built for Sol's RNG and similar Roblox macro communities.
+> Solrais is currently on **version v1.4.3** — a powerful multi-server Discord bot for **macro session tracking**, **AI-powered chat**, **biome relay systems**, and **community management** — built for Sol's RNG and similar Roblox macro communities.
 
 ![Version](https://img.shields.io/badge/version-v1.4.3-blue?style=flat-square)
 ![Node](https://img.shields.io/badge/node-18%2B-green?style=flat-square)
